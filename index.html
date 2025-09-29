@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Redes Locales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .answer-label {
+            display: block;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .answer-label:hover {
+            background-color: #f3f4f6;
+            border-color: #6b7280;
+        }
+        input[type="radio"]:checked + .answer-label {
+            background-color: #dbeafe;
+            border-color: #3b82f6;
+            font-weight: 600;
+        }
+        .correct-answer {
+            background-color: #dcfce7 !important;
+            border-color: #22c55e !important;
+            color: #166534;
+        }
+        .wrong-answer {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+            color: #991b1b;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Cuestionario: Introducción a las Redes Locales</h1>
+            <p class="mt-2 text-gray-600">Basado en la presentación. Selecciona una respuesta para cada pregunta y pulsa "Corregir" al final.</p>
+        </header>
+
+        <main id="quiz-container" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            
+            <form id="quiz-form">
+                <!-- Pregunta 1 -->
+                <div class="question-block mb-8">
+                    <p class="text-lg font-semibold mb-4">1. Según la presentación, ¿qué es la informática?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" id="q1_0" name="q1" value="0"><label for="q1_0" class="answer-label">La ciencia que estudia el hardware de los ordenadores.</label></div>
+                        <div><input type="radio" id="q1_1" name="q1" value="1"><label for="q1_1" class="answer-label">La ciencia que estudia el tratamiento automático de la información.</label></div>
+                        <div><input type="radio" id="q1_2" name="q1" value="2"><label for="q1_2" class="answer-label">El estudio de las redes de comunicación.</label></div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-block mb-8">
+                    <p class="text-lg font-semibold mb-4">2. En un sistema de comunicaciones, ¿cómo se denominan las interferencias que afectan a la señal?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" id="q2_0" name="q2" value="0"><label for="q2_0" class="answer-label">Ruido</label></div>
+                        <div><input type="radio" id="q2_1" name="q2" value="1"><label for="q2_1" class="answer-label">Protocolo</label></div>
+                        <div><input type="radio" id="q2_2" name="q2" value="2"><label for="q2_2" class="answer-label">Paquete</label></div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="question-block mb-8">
+                    <p class="text-lg font-semibold mb-4">3. ¿Cuál de estos es un ejemplo de medio de transmisión NO guiado (inalámbrico)?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" id="q3_0" name="q3" value="0"><label for="q3_0" class="answer-label">Fibra óptica</label></div>
+                        <div><input type="radio" id="q3_1" name="q3" value="1"><label for="q3_1" class="answer-label">Cable de par trenzado</label></div>
+                        <div><input type="radio" id="q3_2" name="q3" value="2"><label for="q3_2" class="answer-label">Ondas de radio (WiFi)</label></div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question-block mb-8">
+                    <p class="text-lg font-semibold mb-4">4. ¿Qué tipo de conmutación establece un canal exclusivo entre emisor y receptor, como en las antiguas llamadas telefónicas?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" id="q4_0" name="q4" value="0"><label for="q4_0" class="answer-label">Conmutación de paquetes</label></div>
+                        <div><input type="radio" id="q4_1" name="q4" value="1"><label for="q4_1" class="answer-label">Conmutación de circuitos</label></div>
+                        <div><input type="radio" id="q4_2" name="q4" value="2"><label for="q4_2" class="answer-label">Conmutación de mensajes</label></div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="question-block mb-8">
+                    <p class="text-lg font-semibold mb-4">5. ¿Qué es una red informática?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" id="q5_0" name="q5" value="0"><label for="q5_0" class="answer-label">Un único ordenador central muy potente.</label></div>
+                        <div><input type="radio" id="q5_1" name="q5" value="1"><label for="q5_1" class="answer-label">Un conjunto de ordenadores y dispositivos autónomos interconectados.</label></div>
+                        <div><input type="radio" id="q5_2" name="q5" value="2"><label for="q5_2" class="answer-label">Un programa para enviar correos electrónicos.</label></div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 6 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">6. En una red, ¿qué dispositivo conecta redes diferentes, como tu red local con Internet?</p><div class="space-y-3"><div><input type="radio" id="q6_0" name="q6" value="0"><label for="q6_0" class="answer-label">Switch</label></div><div><input type="radio" id="q6_1" name="q6" value="1"><label for="q6_1" class="answer-label">Router</label></div><div><input type="radio" id="q6_2" name="q6" value="2"><label for="q6_2" class="answer-label">Punto de acceso</label></div></div></div>
+                <!-- Pregunta 7 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">7. ¿Qué es un protocolo de red?</p><div class="space-y-3"><div><input type="radio" id="q7_0" name="q7" value="0"><label for="q7_0" class="answer-label">Un dispositivo físico de la red.</label></div><div><input type="radio" id="q7_1" name="q7" value="1"><label for="q7_1" class="answer-label">La velocidad de la conexión a internet.</label></div><div><input type="radio" id="q7_2" name="q7" value="2"><label for="q7_2" class="answer-label">Un conjunto de normas a seguir al transmitir información.</label></div></div></div>
+                <!-- Pregunta 8 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">8. Una de las ventajas de las redes en empresas es la reducción de costes al usar PCs interconectados en lugar de un gran...</p><div class="space-y-3"><div><input type="radio" id="q8_0" name="q8" value="0"><label for="q8_0" class="answer-label">Servidor</label></div><div><input type="radio" id="q8_1" name="q8" value="1"><label for="q8_1" class="answer-label">Mainframe</label></div><div><input type="radio" id="q8_2" name="q8" value="2"><label for="q8_2" class="answer-label">Router</label></div></div></div>
+                <!-- Pregunta 9 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">9. ¿Cómo se llama el modelo donde los usuarios (clientes) solicitan servicios a otros ordenadores (servidores)?</p><div class="space-y-3"><div><input type="radio" id="q9_0" name="q9" value="0"><label for="q9_0" class="answer-label">Modelo peer-to-peer</label></div><div><input type="radio" id="q9_1" name="q9" value="1"><label for="q9_1" class="answer-label">Modelo cliente-servidor</label></div><div><input type="radio" id="q9_2" name="q9" value="2"><label for="q9_2" class="answer-label">Modelo de difusión</label></div></div></div>
+                <!-- Pregunta 10 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">10. Una red que se instala en una compañía para uso exclusivo de sus miembros es una red...</p><div class="space-y-3"><div><input type="radio" id="q10_0" name="q10" value="0"><label for="q10_0" class="answer-label">Pública</label></div><div><input type="radio" id="q10_1" name="q10" value="1"><label for="q10_1" class="answer-label">Privada</label></div><div><input type="radio" id="q10_2" name="q10" value="2"><label for="q10_2" class="answer-label">Conmutada</label></div></div></div>
+                <!-- Pregunta 11 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">11. ¿Qué tipo de red abarca un área geográfica como una ciudad?</p><div class="space-y-3"><div><input type="radio" id="q11_0" name="q11" value="0"><label for="q11_0" class="answer-label">LAN (Local Area Network)</label></div><div><input type="radio" id="q11_1" name="q11" value="1"><label for="q11_1" class="answer-label">WAN (Wide Area Network)</label></div><div><input type="radio" id="q11_2" name="q11" value="2"><label for="q11_2" class="answer-label">MAN (Metropolitan Area Network)</label></div></div></div>
+                <!-- Pregunta 12 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">12. La red que abarca varios países o continentes se clasifica como:</p><div class="space-y-3"><div><input type="radio" id="q12_0" name="q12" value="0"><label for="q12_0" class="answer-label">LAN</label></div><div><input type="radio" id="q12_1" name="q12" value="1"><label for="q12_1" class="answer-label">WAN</label></div><div><input type="radio" id="q12_2" name="q12" value="2"><label for="q12_2" class="answer-label">CAN</label></div></div></div>
+                <!-- Pregunta 13 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">13. La disposición real y tangible de los dispositivos y cables en una red se conoce como topología...</p><div class="space-y-3"><div><input type="radio" id="q13_0" name="q13" value="0"><label for="q13_0" class="answer-label">Lógica</label></div><div><input type="radio" id="q13_1" name="q13" value="1"><label for="q13_1" class="answer-label">Física</label></div><div><input type="radio" id="q13_2" name="q13" value="2"><label for="q13_2" class="answer-label">Virtual</label></div></div></div>
+                <!-- Pregunta 14 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">14. ¿Cuál es el principal inconveniente de la topología en estrella?</p><div class="space-y-3"><div><input type="radio" id="q14_0" name="q14" value="0"><label for="q14_0" class="answer-label">Necesita mucho cableado.</label></div><div><input type="radio" id="q14_1" name="q14" value="1"><label for="q14_1" class="answer-label">Si falla el nodo central, toda la red queda inutilizada.</label></div><div><input type="radio" id="q14_2" name="q14" value="2"><label for="q14_2" class="answer-label">Es muy lenta.</label></div></div></div>
+                <!-- Pregunta 15 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">15. En la topología en bus, ¿qué sucede si falla un nodo?</p><div class="space-y-3"><div><input type="radio" id="q15_0" name="q15" value="0"><label for="q15_0" class="answer-label">La red sigue funcionando sin problemas.</label></div><div><input type="radio" id="q15_1" name="q15" value="1"><label for="q15_1" class="answer-label">Solo ese nodo queda desconectado.</label></div><div><input type="radio" id="q15_2" name="q15" value="2"><label for="q15_2" class="answer-label">Todos los nodos quedan aislados.</label></div></div></div>
+                <!-- Pregunta 16 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">16. ¿Qué topología física tiene una interconexión total de todos los nodos de la red?</p><div class="space-y-3"><div><input type="radio" id="q16_0" name="q16" value="0"><label for="q16_0" class="answer-label">Anillo</label></div><div><input type="radio" id="q16_1" name="q16" value="1"><label for="q16_1" class="answer-label">Malla</label></div><div><input type="radio" id="q16_2" name="q16" value="2"><label for="q16_2" class="answer-label">Árbol</label></div></div></div>
+                <!-- Pregunta 17 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">17. La forma en que circulan los datos dentro de la red, independientemente de las conexiones físicas, es la topología...</p><div class="space-y-3"><div><input type="radio" id="q17_0" name="q17" value="0"><label for="q17_0" class="answer-label">Física</label></div><div><input type="radio" id="q17_1" name="q17" value="1"><label for="q17_1" class="answer-label">Lógica</label></div><div><input type="radio" id="q17_2" name="q17" value="2"><label for="q17_2" class="answer-label">Geográfica</label></div></div></div>
+                <!-- Pregunta 18 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">18. En la conmutación de paquetes, ¿qué técnica asegura que todos los paquetes sigan el mismo camino y lleguen ordenados?</p><div class="space-y-3"><div><input type="radio" id="q18_0" name="q18" value="0"><label for="q18_0" class="answer-label">Datagrama</label></div><div><input type="radio" id="q18_1" name="q18" value="1"><label for="q18_1" class="answer-label">Circuito virtual</label></div><div><input type="radio" id="q18_2" name="q18" value="2"><label for="q18_2" class="answer-label">Conmutación de mensajes</label></div></div></div>
+                <!-- Pregunta 19 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">19. ¿Qué técnica de conmutación de paquetes utiliza Internet, donde cada paquete puede seguir una ruta distinta?</p><div class="space-y-3"><div><input type="radio" id="q19_0" name="q19" value="0"><label for="q19_0" class="answer-label">Datagrama</label></div><div><input type="radio" id="q19_1" name="q19" value="1"><label for="q19_1" class="answer-label">Circuito virtual</label></div><div><input type="radio" id="q19_2" name="q19" value="2"><label for="q19_2" class="answer-label">Conmutación de circuitos</label></div></div></div>
+                <!-- Pregunta 20 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">20. Un mensaje enviado a TODOS los nodos de la red se denomina:</p><div class="space-y-3"><div><input type="radio" id="q20_0" name="q20" value="0"><label for="q20_0" class="answer-label">Unicast</label></div><div><input type="radio" id="q20_1" name="q20" value="1"><label for="q20_1" class="answer-label">Multicast</label></div><div><input type="radio" id="q20_2" name="q20" value="2"><label for="q20_2" class="answer-label">Broadcast</label></div></div></div>
+                <!-- Pregunta 21 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">21. Si un profesor se dirige a un único alumno en clase, ¿qué tipo de mensaje sería?</p><div class="space-y-3"><div><input type="radio" id="q21_0" name="q21" value="0"><label for="q21_0" class="answer-label">Unicast</label></div><div><input type="radio" id="q21_1" name="q21" value="1"><label for="q21_1" class="answer-label">Multicast</label></div><div><input type="radio" id="q21_2" name="q21" value="2"><label for="q21_2" class="answer-label">Broadcast</label></div></div></div>
+                <!-- Pregunta 22 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">22. ¿Qué es un ETD (Equipo Terminal de Datos)?</p><div class="space-y-3"><div><input type="radio" id="q22_0" name="q22" value="0"><label for="q22_0" class="answer-label">El equipo que genera o recibe la información, como un PC o un móvil.</label></div><div><input type="radio" id="q22_1" name="q22" value="1"><label for="q22_1" class="answer-label">Un intermediario como un módem o una tarjeta de red.</label></div><div><input type="radio" id="q22_2" name="q22" value="2"><label for="q22_2" class="answer-label">El cable que conecta los ordenadores.</label></div></div></div>
+                <!-- Pregunta 23 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">23. Un módem o una tarjeta de red son ejemplos de:</p><div class="space-y-3"><div><input type="radio" id="q23_0" name="q23" value="0"><label for="q23_0" class="answer-label">ETD (Equipo Terminal de Datos)</label></div><div><input type="radio" id="q23_1" name="q23" value="1"><label for="q23_1" class="answer-label">ECD (Equipo de Comunicación de Datos)</label></div><div><input type="radio" id="q23_2" name="q23" value="2"><label for="q23_2" class="answer-label">Multiplexor</label></div></div></div>
+                <!-- Pregunta 24 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">24. ¿Por qué surgió la necesidad de la normalización en las redes?</p><div class="space-y-3"><div><input type="radio" id="q24_0" name="q24" value="0"><label for="q24_0" class="answer-label">Para hacer las redes más rápidas.</label></div><div><input type="radio" id="q24_1" name="q24" value="1"><label for="q24_1" class="answer-label">Para que redes de diferentes fabricantes no fueran compatibles.</label></div><div><input type="radio" id="q24_2" name="q24" value="2"><label for="q24_2" class="answer-label">Porque al querer conectar redes diferentes, no eran compatibles entre sí.</label></div></div></div>
+                <!-- Pregunta 25 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">25. Un estándar que se impone por su uso masivo, sin ser creado por un organismo oficial, se llama:</p><div class="space-y-3"><div><input type="radio"id="q25_0" name="q25" value="0"><label for="q25_0" class="answer-label">Estándar de iure</label></div><div><input type="radio" id="q25_1" name="q25" value="1"><label for="q25_1" class="answer-label">Estándar de facto</label></div><div><input type="radio" id="q25_2" name="q25" value="2"><label for="q25_2" class="answer-label">Estándar abierto</label></div></div></div>
+                <!-- Pregunta 26 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">26. ¿Qué organismo internacional es una agencia de la ONU para las telecomunicaciones?</p><div class="space-y-3"><div><input type="radio" id="q26_0" name="q26" value="0"><label for="q26_0" class="answer-label">ISO</label></div><div><input type="radio" id="q26_1" name="q26" value="1"><label for="q26_1" class="answer-label">IEEE</label></div><div><input type="radio" id="q26_2" name="q26" value="2"><label for="q26_2" class="answer-label">ITU</label></div></div></div>
+                <!-- Pregunta 27 -->
+                <div class="question-block mb-8"><p class="text-lg font-semibold mb-4">27. ¿Qué organización desarrolló el modelo de referencia OSI?</p><div class="space-y-3"><div><input type="radio" id="q27_0" name="q27" value="0"><label for="q27_0" class="answer-label">ISO</label></div><div><input type="radio" id="q27_1" name="q27" value="1"><label for="q27_1" class="answer-label">ANSI</label></div><div><input type="radio" id="q27_2" name="q27" value="2"><label for="q27_2" class="answer-label">IETF</label></div></div></div>
+                <!-- Pregunta 28 -->
+                <div clas
